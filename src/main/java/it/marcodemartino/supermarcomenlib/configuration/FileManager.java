@@ -68,6 +68,9 @@ public class FileManager {
             if (this.file == null)
                 file = new File(plugin.getDataFolder(), this.name);
 
+            if (this.file.exists())
+                return this;
+
             if (this.config == null)
                 return this;
 
