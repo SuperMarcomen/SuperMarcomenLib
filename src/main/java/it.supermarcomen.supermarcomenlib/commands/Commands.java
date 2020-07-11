@@ -1,4 +1,4 @@
-package commands;
+package it.supermarcomen.supermarcomenlib.commands;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
