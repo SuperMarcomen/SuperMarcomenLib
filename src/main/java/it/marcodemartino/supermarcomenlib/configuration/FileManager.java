@@ -60,6 +60,27 @@ public class FileManager {
         }
 
         /**
+         * Saves the config as long as the config isn't empty
+         *
+         * @return
+         */
+        public Config createConfig() {
+            if (this.file == null)
+                file = new File(plugin.getDataFolder(), this.name);
+
+            if (this.config == null)
+                return this;
+
+            try {
+                if (config.getConfigurationSection("").getKeys(true).size() != 0)
+                    config.save(this.file);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            return this;
+        }
+
+        /**
          * Gets the config as a YamlConfiguration
          *
          * @return
